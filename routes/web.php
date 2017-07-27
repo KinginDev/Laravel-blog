@@ -11,15 +11,16 @@
 |
 */
 
+Auth::routes();
 //Authentication routes
 Route::get('auth/login','Auth\LoginController@getLogin');
 Route::post('auth/login','Auth\LoginController@postLogin');
 Route::get('auth/logout','Auth\LoginController@getLogout');
 
-
+Auth::routes();
 //Registration routes
-Route::get('auth/register', 'Auth\RegisterController@getRegister');
-Route::post('auth/register', 'Auth\RegisterController@create');
+Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('auth/register', 'Auth\RegisterController@register');
 #Single Blog Route
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[|\w\d\-\_]+');
 Route::get('blog' , ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
