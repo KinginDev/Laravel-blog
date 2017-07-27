@@ -13,9 +13,9 @@
 
 Auth::routes();
 //Authentication routes
-Route::get('auth/login','Auth\LoginController@getLogin');
-Route::post('auth/login','Auth\LoginController@postLogin');
-Route::get('auth/logout','Auth\LoginController@getLogout');
+Route::get('auth/login','Auth\LoginController@ShowLoginForm');
+Route::post('auth/login','Auth\LoginController@login');
+Route::get('auth/logout','Auth\LoginController@logout');
 
 Auth::routes();
 //Registration routes
